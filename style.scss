@@ -1,0 +1,144 @@
+//variables
+@import 'variables';
+
+//mixins
+@import 'mixins';
+
+
+@import url(https://fonts.googleapis.com/css?family=Overpass:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+//styling
+.main {
+    max-width: 1440px;
+    min-width: 375px;
+    height: 100vh;
+    background-color: $main-bg; //using variables!!!!!
+    @include flex_center;
+
+    .card{
+        padding: 32px;
+        margin: 30px;
+        background-image: $card-bg; //using variables!!!!!!
+        max-width: 370px;
+        max-height: 415px;
+        border-radius: 24px;
+        font-family: $heading-font; //using variables!!!!!!
+
+        .card__logo {
+            margin-bottom: 20px;
+            @include circle_bg;
+            @include flex_center;
+
+            .card__logo_star {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            @include font_style;
+        }
+
+        p {
+            text-align: left;
+            margin-bottom: 5px;
+            @include par_style;
+        }
+        .repeat_selection{
+            visibility: hidden;
+            width: 60%;
+            margin: 0 auto;
+            letter-spacing: 0.2em;
+            p{
+                color: red;
+            }
+        }
+        .card__rating {
+            margin-bottom: 20px;
+            
+            ul {
+                @include flex_space-between;
+
+                li {
+                    @include flex_center;
+
+                    a {
+                        display: inline-block;
+                        text-align-last: center;
+                        @include flex_center;
+                        @include link_style;
+                        @include circle_bg;
+                        transition: background-color 0.3s, color 0.3s;
+                        transition-timing-function: ease-in-out;
+                    }
+                    a:hover{
+                        @include link_style_hover;
+                        @include circle_bg_hover
+                    }
+                    a:active{
+                        @include link_style_active;
+                    }
+                    a:visited{
+                        @include link_style_active;
+                    }
+                }
+            }
+        }
+
+        .card__button {
+            @include flex_center;
+        }
+
+        .button {
+            @include button_style;
+            transition: background-color 0.2s, color 0.2s;
+            transition-timing-function: ease-in-out;
+            .submit {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+        }
+        .button:hover{
+            background-color: rgb(255, 255, 255);
+            color: #FC7613;
+        }
+        .button:active{
+            background-color: rgb(255, 123, 244);
+            color: #ffffff;
+        }
+    }
+};
+
+//thank you card
+
+.card__thankYou{
+    @extend .card;
+    @include flex_center;
+        .card__thankYou_logo{
+            margin: 5px auto 30px;
+            width: 170px;
+        }
+        .card__thankYou_selection{
+            width: fit-content;
+            background-color: #262F38;
+            border-radius: 16px;
+            margin: 10px auto 20px;
+            p{
+            color:#bb692e;
+            margin: 5px 5px;
+            font-weight: 200;
+            padding: 3px 10px;
+            }
+        }
+        .card__thankYou_heading{
+            text-align: center;
+            p{
+                text-align: center;
+            }
+        }
+    
+}
