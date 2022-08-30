@@ -79,9 +79,9 @@
                     a:active{
                         @include link_style_active;
                     }
-                    a:visited{
-                        @include link_style_active;
-                    }
+                    // a:visited{
+                    //     @include link_style_active;
+                    // }
                 }
             }
         }
